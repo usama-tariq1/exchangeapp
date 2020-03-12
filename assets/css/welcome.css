@@ -1,0 +1,162 @@
+.screen {
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.466);
+}
+
+.screen__header {
+  height: 50px;
+  width: 100%;
+}
+
+.screen__header__left {
+  float: left;
+  height: 100%;
+}
+
+.screen__header__left .icon {
+  height: 80%;
+  margin: 10px;
+}
+
+.screen__header__right {
+  float: right;
+  height: 100%;
+}
+
+.screen__header__right .btn {
+  height: 30px;
+  width: 90px;
+  background-color: #fa3333;
+  color: white;
+  font-size: 14px;
+  margin: 10px 10px;
+  border-radius: 30px;
+  text-align: center;
+  padding-top: 6px;
+  font-family: Montserrat;
+}
+
+.screen__header__right .btn:hover {
+  background-color: gray;
+}
+
+.screen__body {
+  width: 70%;
+  margin: 0 auto;
+  font-family: Montserrat;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.screen__body .imgholder {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.screen__body .imgholder .img {
+  width: 100%;
+}
+
+.screen__body .title {
+  font-size: 22px;
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.screen__body .subtitle {
+  font-size: 15px;
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.screen__body .btnholder {
+  height: 26px;
+  width: 100%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 30px;
+}
+
+.screen__body .btnholder .startbtn {
+  height: 200%;
+}
+
+.screen__body .btnholder .startbtn:hover {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.screen__body .btnholder .btn {
+  height: 100%;
+  width: 90px;
+  background-color: #1da31d;
+  color: white;
+  font-size: 14px;
+  margin: 0px 10px;
+  border-radius: 30px;
+  text-align: center;
+  padding-top: 4px;
+}
+
+.screen__body .btnholder .btn:hover {
+  background-color: gray;
+}
+
+.screen__footer {
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+}
+
+.screen__footer .left {
+  float: left;
+  height: 100%;
+  width: 45%;
+}
+
+.screen__footer .left .icon {
+  height: 80%;
+  margin: 10px;
+}
+
+.screen__footer .right {
+  float: right;
+  height: 100%;
+  width: 45%;
+}
+
+.screen__footer .right .btn {
+  float: right;
+  height: 30px;
+  width: 90px;
+  background-color: #07cc39;
+  color: white;
+  font-size: 14px;
+  margin: 10px 10px;
+  border-radius: 30px;
+  text-align: center;
+  padding-top: 6px;
+  font-family: Montserrat;
+}
+
+.screen__footer .right .btn:hover {
+  background-color: gray;
+}
+/*# sourceMappingURL=welcome.css.map */

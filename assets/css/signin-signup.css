@@ -1,0 +1,213 @@
+.sscreen {
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.466);
+  font-family: Montserrat;
+}
+
+.sscreen__header {
+  height: 40px;
+  width: 100%;
+}
+
+.sscreen__header__left {
+  float: left;
+  height: 100%;
+  width: 67%;
+}
+
+.sscreen__header__left .icon {
+  height: 80%;
+  margin: 10px;
+}
+
+.sscreen__header__left .txt {
+  font-size: 15px;
+  color: #0b92bb;
+  margin: 10px;
+  margin-top: 20px;
+}
+
+.sscreen__header__left .txt span {
+  color: white;
+}
+
+.sscreen__header__right {
+  float: right;
+  height: 100%;
+  width: 30%;
+}
+
+.sscreen__header__right .btn {
+  height: 25px;
+  width: 80px;
+  background-color: #2fe65d;
+  color: white;
+  font-size: 12px;
+  margin: 10px 10px;
+  border-radius: 30px;
+  text-align: center;
+  padding-top: 6px;
+  font-family: Montserrat;
+}
+
+.sscreen__header__right .btn:hover {
+  background-color: gray;
+}
+
+.sscreen__body {
+  width: 70%;
+  margin: 0 auto;
+  font-family: Montserrat;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.sscreen__body .imgholder {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.sscreen__body .imgholder .img {
+  width: 100%;
+}
+
+.sscreen__body .editbtn {
+  position: relative;
+  overflow: hidden;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-top: -30px;
+  left: 15%;
+}
+
+.sscreen__body .editbtn .icon {
+  width: 100%;
+}
+
+.sscreen__body .editbtn input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.sscreen__body .box {
+  width: 100%;
+  border: 2px solid gray;
+  background-color: rgba(0, 0, 0, 0.575);
+  border-radius: 10px;
+  margin-top: 25px;
+  padding-bottom: 30px;
+}
+
+.sscreen__body .box .txt {
+  width: 80%;
+  height: 35px;
+  border: none;
+  background: none;
+  border-bottom: 1px solid gray;
+  text-indent: 12px;
+  margin: 0 auto;
+  color: white;
+  display: block;
+  margin-top: 10px;
+}
+
+.sscreen__body .box .txt option {
+  color: black;
+}
+
+.sscreen__body .btnholder {
+  height: 26px;
+  width: 100%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 30px;
+}
+
+.sscreen__body .btnholder .startbtn {
+  height: 200%;
+  display: block;
+}
+
+.sscreen__body .btnholder .startbtn:hover {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.sscreen__body .btnholder .btn {
+  height: 100%;
+  width: 90px;
+  background-color: #1da31d;
+  color: white;
+  font-size: 14px;
+  margin: 0px 10px;
+  border-radius: 30px;
+  text-align: center;
+  padding-top: 4px;
+}
+
+.sscreen__body .btnholder .btn:hover {
+  background-color: gray;
+}
+
+.sscreen__footer {
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+}
+
+.sscreen__footer .left {
+  float: left;
+  height: 100%;
+  width: 45%;
+}
+
+.sscreen__footer .left .icon {
+  height: 80%;
+  margin: 10px;
+}
+
+.sscreen__footer .right {
+  float: right;
+  height: 100%;
+  width: 45%;
+}
+
+.sscreen__footer .right .btn {
+  float: right;
+  height: 30px;
+  width: 90px;
+  background-color: #07cc39;
+  color: white;
+  font-size: 14px;
+  margin: 10px 10px;
+  border-radius: 30px;
+  text-align: center;
+  padding-top: 6px;
+  font-family: Montserrat;
+}
+
+.sscreen__footer .right .btn:hover {
+  background-color: gray;
+}
+/*# sourceMappingURL=signin-signup.css.map */

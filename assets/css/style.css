@@ -1,0 +1,565 @@
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  font-family: Montserrat;
+  color: white;
+}
+
+body {
+  height: 90vh;
+  overflow: hidden;
+}
+
+#msg {
+  display: block;
+  color: #07cc39;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+#errmsg {
+  display: block;
+  color: red;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+.error {
+  display: block;
+  color: red;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+.cover {
+  width: 100%;
+  height: 90vh;
+  position: absolute;
+  background-color: black;
+}
+
+.cover .img {
+  width: 100%;
+  -webkit-transform: scale(1.3%);
+          transform: scale(1.3%);
+}
+
+.txt:focus {
+  outline: none;
+}
+
+.searchbar:focus {
+  outline: none;
+}
+
+.main {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main .contentbox {
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  color: white;
+}
+
+.main .navbar {
+  height: 35px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.466);
+}
+
+.main .navbar .logo {
+  height: 100%;
+  float: left;
+  width: 30%;
+}
+
+.main .navbar .logo .img {
+  width: auto;
+  height: 80%;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+@media (max-width: 850px) {
+  .main .navbar .logo .img {
+    height: auto;
+    width: 100%;
+  }
+}
+
+.main .profile {
+  width: 100%;
+}
+
+.main .profile .profilehold {
+  width: 100%;
+  margin: 0 auto;
+  height: 180px;
+  background-color: rgba(0, 0, 0, 0.616);
+  font-family: Montserrat;
+}
+
+.main .profile .profilehold .dots {
+  float: right;
+  height: 18px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.main .profile .profilehold .pimg {
+  height: 140px;
+  width: 140px;
+  float: left;
+  border: 1px solid gray;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.main .profile .profilehold .pimg .img {
+  width: 100%;
+}
+
+.main .profile .profilehold .bio {
+  float: left;
+  width: auto;
+  margin-top: 20px;
+  margin-right: 10px;
+  margin-left: 20px;
+  font-style: Montserrat;
+}
+
+.main .profile .profilehold .bio .name {
+  color: white;
+  font-size: 18px;
+}
+
+.main .profile .profilehold .bio .contact {
+  color: #4ea8f1;
+  font-size: 14px;
+}
+
+.main .profile .profilehold .bio .city {
+  color: #a8a8a8;
+  font-size: 12px;
+}
+
+.main .profile .profilehold .bio .editbtn {
+  display: block;
+  padding: 4px 15px;
+  float: left;
+  background-color: #1694dd;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.main .profile .profilehold .bio .editmenu {
+  position: absolute;
+  top: 0;
+  left: 5%;
+  height: 300px;
+  width: 90%;
+  border: 1px solid red;
+}
+
+.main .profile .profilehold .bio .name,
+.main .profile .profilehold .bio .city,
+.main .profile .profilehold .bio .contact {
+  padding: 6px;
+}
+
+.selecti {
+  margin-top: -40;
+  width: 70px;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.scrollspace {
+  height: 100px;
+}
+
+.c-card {
+  width: 95%;
+  margin: 0 auto;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.836)), to(rgba(0, 0, 0, 0.61)));
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.836), rgba(0, 0, 0, 0.61));
+  height: auto;
+  padding: 7px;
+  border-radius: 16px;
+  margin-top: 10px;
+}
+
+.c-card .c-head {
+  height: auto;
+  width: 100%;
+}
+
+.c-card .c-head .imgholder {
+  height: 33px;
+  width: 33px;
+  border: 1px solid gray;
+  border-radius: 50%;
+  overflow: hidden;
+  float: left;
+  margin: 5px;
+}
+
+.c-card .c-head .imgholder .img {
+  width: 100%;
+}
+
+.c-card .c-head .info {
+  float: left;
+  font-family: Montserrat;
+  margin: 5px;
+  margin-left: 10px;
+}
+
+.c-card .c-head .info .name {
+  color: white;
+  font-size: 17px;
+}
+
+.c-card .c-head .info .date {
+  color: #4ea8f1;
+  font-size: 12px;
+}
+
+.c-card .c-head .dots {
+  float: right;
+  height: 24px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.c-card .c-head .menu {
+  float: right;
+  height: 30px;
+  width: auto;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.c-card .c-head .menu__icon {
+  float: right;
+  height: 100%;
+  margin-right: 10px;
+}
+
+.c-card .body {
+  height: auto;
+  padding-left: 16%;
+  padding-bottom: 20px;
+}
+
+.c-card .body .simplebar-scrollbar:before {
+  background-color: gray;
+}
+
+.c-card .body .simplebar-scrollbar {
+  margin-right: -3px;
+  position: absolute;
+}
+
+.c-card .body .rate-update {
+  width: 80%;
+  font-style: Montserrat;
+  margin-bottom: 10px;
+}
+
+.c-card .body .rate-update .title {
+  width: 40%;
+  margin-top: 30px;
+  float: left;
+}
+
+.c-card .body .rate-update .title .rate-of {
+  font-size: 22px;
+  color: #07cc39;
+}
+
+.c-card .body .rate-update .title .city {
+  font-size: 12px;
+  color: #26cae7;
+}
+
+.c-card .body .rate-update .info {
+  width: 50%;
+  float: left;
+  margin-top: 20px;
+  padding-left: 20px;
+}
+
+.c-card .body .rate-update .info .up-rate {
+  font-size: 20px;
+  color: #07cc39;
+  border-bottom: 1px solid gray;
+  text-align: center;
+}
+
+.c-card .body .rate-update .info .down-rate {
+  font-size: 20px;
+  color: #ff3333;
+  text-align: center;
+}
+
+.c-card .body .contract {
+  width: 80%;
+}
+
+.c-card .body .contract .company {
+  height: auto;
+  width: auto;
+}
+
+.c-card .body .contract .company .bar {
+  height: 100px;
+  width: 5px;
+  background-color: orange;
+  float: left;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.c-card .body .contract .company .company-name {
+  font-family: Montserrat;
+  font-size: 17px;
+  color: #07cc39;
+  margin-top: 10px;
+}
+
+.c-card .body .contract .rate,
+.c-card .body .contract .qty {
+  color: lightgray;
+  font-size: 12px;
+  margin-top: 7px;
+}
+
+.c-card .body .contract .rate span,
+.c-card .body .contract .qty span {
+  color: orange;
+}
+
+.c-card .body .contract .rate span span,
+.c-card .body .contract .qty span span {
+  color: #10a010;
+}
+
+.ratesheet {
+  width: 100%;
+}
+
+.ratesheet .topbar {
+  width: 96%;
+  height: 40px;
+  border: 1px solid gray;
+  background-color: rgba(0, 0, 0, 0.616);
+  border-radius: 10px;
+  margin: 0 auto;
+  margin-top: 5px;
+}
+
+.ratesheet .topbar .left {
+  height: 100%;
+  width: 30%;
+  float: left;
+}
+
+.ratesheet .topbar .left .icon {
+  height: 50%;
+  margin: 10px;
+}
+
+.ratesheet .topbar .left .icon:hover {
+  -webkit-filter: grayscale(100);
+          filter: grayscale(100);
+}
+
+.ratesheet .topbar .right {
+  height: 100%;
+  width: 65%;
+  float: right;
+}
+
+.ratesheet .topbar .right .selector {
+  width: 100%;
+  border: none;
+  background: none;
+  color: #1f87c4;
+  font-size: 17px;
+  margin-top: 10px;
+}
+
+.ratesheet .topbar .right .selector option {
+  background-color: black;
+  color: white;
+}
+
+.feeds {
+  width: 100%;
+}
+
+.feeds .topbar {
+  width: 96%;
+  height: 40px;
+  border: 1px solid gray;
+  background-color: rgba(0, 0, 0, 0.616);
+  border-radius: 10px;
+  margin: 0 auto;
+  margin-top: 5px;
+}
+
+.feeds .topbar .left {
+  height: 100%;
+  width: 15%;
+  float: left;
+}
+
+.feeds .topbar .left .icon {
+  height: 50%;
+  margin: 10px;
+}
+
+.feeds .topbar .left .icon:hover {
+  -webkit-filter: grayscale(100);
+          filter: grayscale(100);
+}
+
+.feeds .topbar .right {
+  height: 100%;
+  width: 80%;
+  float: right;
+}
+
+.feeds .topbar .right .searchbar {
+  width: 100%;
+  border: none;
+  background: none;
+  color: #1f87c4;
+  font-size: 17px;
+  margin-top: 10px;
+  text-indent: 12px;
+}
+
+.feeds .topbar .right .searchicon {
+  height: 20px;
+  float: right;
+  margin-top: -21px;
+  margin-right: 10px;
+}
+
+.ratecard {
+  width: 96%;
+  margin: 0 auto;
+  height: 120px;
+  margin-top: 10px;
+}
+
+.ratecard .left {
+  width: 47%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.616);
+  border-radius: 10px;
+  float: left;
+}
+
+.ratecard .left .itemname {
+  font-size: 25px;
+  text-align: center;
+  margin: 10px;
+  color: white;
+}
+
+.ratecard .left .date {
+  font-size: 14px;
+  color: #1f87c4;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.ratecard .left .province {
+  width: 80%;
+  height: 16px;
+  border: 1px solid gray;
+  color: #ff8800;
+  border-radius: 4px;
+  margin: 0 auto;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 12px;
+  padding: 2px;
+}
+
+.ratecard .right {
+  width: 47%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.616);
+  border-radius: 10px;
+  float: right;
+}
+
+.ratecard .right .currency {
+  width: 80%;
+  height: 16px;
+  border: 1px solid gray;
+  color: #ff8800;
+  border-radius: 4px;
+  margin: 0 auto;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 12px;
+  padding: 2px;
+}
+
+.ratecard .right .universalrate {
+  font-size: 22px;
+  color: #07cc39;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 10px;
+  text-align: center;
+  padding-bottom: 5px;
+  border-bottom: 1px solid gray;
+}
+
+.ratecard .right .universalrate span {
+  margin-right: 8px;
+}
+
+.ratecard .right .universalrate span .icon {
+  height: 18px;
+}
+
+.ratecard .right .local {
+  font-size: 22px;
+  color: #07cc39;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.ratecard .right .local span {
+  margin-right: 8px;
+}
+
+.ratecard .right .local span .icon {
+  height: 18px;
+}
+/*# sourceMappingURL=style.css.map */

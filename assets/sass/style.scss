@@ -1,0 +1,648 @@
+$mobile: 850px;
+$mheight: 90vh;
+
+$overlay: rgba(0, 0, 0, 0.616);
+$font: Montserrat;
+$accent: gray;
+
+$green: rgb(7, 204, 57);
+$red: rgb(255, 51, 51);
+$blue : rgb(31, 135, 196);
+
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+
+@mixin mheight {
+  @media (min-height: #{$mheight}) {
+    @content;
+  }
+}
+
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  font-family: Montserrat;
+  color: white;
+}
+
+body {
+  height: 90vh;
+  overflow: hidden;
+}
+
+#msg {
+  display: block;
+  color: $green;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+#errmsg {
+  display: block;
+  color: red;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+.error {
+  display: block;
+  color: red;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+.cover {
+  width: 100%;
+  height: 90vh;
+  position: absolute;
+  background-color: black;
+
+  .img {
+    width: 100%;
+    transform: scale(1.3%);
+  }
+}
+
+.txt:focus {
+  outline: none;
+}
+
+.searchbar:focus {
+  outline: none;
+}
+
+.main {
+  position: absolute;
+
+  //   background-color: black;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+  .contentbox {
+    width: 100%;
+    height: 100vh;
+    // border: 1px solid red;
+    overflow: auto;
+    color: white;
+  }
+
+  // content box
+
+  // @import 'dock';
+
+  .navbar {
+    height: 35px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.466);
+    // border: 1px solid red;
+
+    .logo {
+      height: 100%;
+      float: left;
+      width: 30%;
+
+      .img {
+        width: auto;
+
+        height: 80%;
+        margin-top: 5px;
+        margin-left: 5px;
+
+        @include mobile() {
+          height: auto;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .profile {
+    width: 100%;
+    // height: 90%;
+
+
+    // border: 1px solid red;
+
+    .profilehold {
+      width: 100%;
+      margin: 0 auto;
+      height: 180px;
+      background-color: $overlay;
+      // filter: blur(2px);
+      // border-radius: 16px;
+      font-family: Montserrat;
+
+      .dots {
+        float: right;
+        height: 18px;
+        margin-top: 10px;
+        margin-right: 10px;
+      }
+
+      .pimg {
+        height: 140px;
+        width: 140px;
+        float: left;
+
+        border: 1px solid gray;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-left: 20px;
+        margin-top: 20px;
+
+        .img {
+          width: 100%;
+        }
+      }
+
+      .bio {
+        float: left;
+        width: auto;
+        margin-top: 20px;
+        margin-right: 10px;
+        margin-left: 20px;
+        font-style: $font;
+
+        .name {
+          color: white;
+          font-size: 18px;
+        }
+
+        .contact {
+          color: rgb(78, 168, 241);
+          font-size: 14px;
+        }
+
+        .city {
+          color: rgb(168, 168, 168);
+          font-size: 12px;
+        }
+
+        .editbtn {
+          display: block;
+          padding: 4px 15px;
+          float: left;
+          background-color: rgb(22, 148, 221);
+          color: white;
+          border-radius: 8px;
+
+          text-align: center;
+          margin-top: 10px;
+        }
+
+        .editmenu {
+          position: absolute;
+          top: 0;
+          left: 5%;
+          height: 300px;
+          width: 90%;
+          border: 1px solid red;
+        }
+
+        .name,
+        .city,
+        .contact {
+          padding: 6px;
+        }
+      }
+    }
+  }
+
+
+}
+
+.selecti {
+  margin-top: -40;
+  width: 70px;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.scrollspace {
+  height: 100px;
+}
+
+// ----------------------  c-card ------------
+
+.c-card {
+  width: 95%;
+  margin: 0 auto;
+  // background-color: $overlay;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.836), rgba(0, 0, 0, 0.61));
+  height: auto;
+  padding: 7px;
+  border-radius: 16px;
+  margin-top: 10px;
+
+  .c-head {
+    height: auto;
+    width: 100%;
+
+    .imgholder {
+      height: 33px;
+      width: 33px;
+      border: 1px solid gray;
+      border-radius: 50%;
+      overflow: hidden;
+      float: left;
+      margin: 5px;
+
+      .img {
+        width: 100%;
+      }
+    }
+
+    .info {
+      float: left;
+      font-family: $font;
+      margin: 5px;
+      margin-left: 10px;
+
+      .name {
+        color: white;
+        font-size: 17px;
+      }
+
+      .date {
+        color: rgb(78, 168, 241);
+        font-size: 12px;
+      }
+    }
+
+    .dots {
+      float: right;
+      height: 24px;
+      margin-top: 10px;
+      margin-right: 10px;
+    }
+
+    .menu {
+      // position: absolute;
+      float: right;
+      height: 30px;
+      width: auto;
+
+      // border: 1px solid red;
+      margin-top: 8px;
+      //   margin-right: 10px;
+      overflow: hidden;
+
+      &__icon {
+        float: right;
+        height: 100%;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  //c-head
+
+  .body {
+    height: auto;
+    padding-left: 16%;
+    padding-bottom: 20px;
+    // border: 1px solid red;
+
+    .simplebar-scrollbar:before {
+      background-color: $accent;
+    }
+
+    .simplebar-scrollbar {
+      margin-right: -3px;
+      position: absolute;
+    }
+
+    .rate-update {
+      width: 80%;
+      font-style: $font;
+      margin-bottom: 10px;
+
+      .title {
+        width: 40%;
+        margin-top: 30px;
+        float: left;
+
+        .rate-of {
+          font-size: 22px;
+          color: $green;
+        }
+
+        .city {
+          font-size: 12px;
+          color: rgb(38, 202, 231);
+        }
+      }
+
+      .info {
+        width: 50%;
+        float: left;
+        margin-top: 20px;
+        padding-left: 20px;
+
+        .up-rate {
+          font-size: 20px;
+          color: $green;
+          border-bottom: 1px solid gray;
+          text-align: center;
+        }
+
+        .down-rate {
+          font-size: 20px;
+          color: $red;
+          text-align: center;
+        }
+      }
+    }
+
+    .contract {
+      width: 80%;
+
+      // border: 1px solid red;
+      .company {
+        height: auto;
+        width: auto;
+
+        .bar {
+          height: 100px;
+          width: 5px;
+          background-color: orange;
+          float: left;
+          border-radius: 8px;
+          margin-right: 10px;
+        }
+
+        .company-name {
+          font-family: $font;
+          font-size: 17px;
+          color: rgb(7, 204, 57);
+          margin-top: 10px;
+        }
+      }
+
+      .rate,
+      .qty {
+        color: lightgray;
+        font-size: 12px;
+        margin-top: 7px;
+
+        span {
+          color: orange;
+
+          span {
+            color: rgb(16, 160, 16);
+          }
+        }
+      }
+    }
+  }
+
+  //body
+}
+
+//c-card ends
+
+
+// rate sheet
+.ratesheet {
+  width: 100%;
+
+
+  .topbar {
+    width: 96%;
+    height: 40px;
+    border: 1px solid gray;
+    background-color: $overlay;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 5px;
+
+
+    .left {
+      height: 100%;
+      width: 30%;
+      // border: 1px solid red;
+      float: left;
+
+      .icon {
+        height: 50%;
+        margin: 10px;
+
+        &:hover {
+          filter: grayscale(100);
+        }
+      }
+
+    }
+
+    .right {
+      height: 100%;
+      width: 65%;
+      // border: 1px solid red;
+      float: right;
+
+      .selector {
+        width: 100%;
+        border: none;
+        background: none;
+        color: rgb(31, 135, 196);
+        font-size: 17px;
+        margin-top: 10px;
+
+        option {
+          background-color: black;
+          color: white;
+        }
+
+      }
+
+    }
+  }
+
+}
+
+//rate sheet ends
+
+// feeds 
+.feeds {
+  width: 100%;
+
+
+  .topbar {
+    width: 96%;
+    height: 40px;
+    border: 1px solid gray;
+    background-color: $overlay;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 5px;
+
+
+    .left {
+      height: 100%;
+      width: 15%;
+      // border: 1px solid red;
+      float: left;
+
+      .icon {
+        height: 50%;
+        margin: 10px;
+
+        &:hover {
+          filter: grayscale(100);
+        }
+      }
+
+    }
+
+    .right {
+      height: 100%;
+      width: 80%;
+      // border: 1px solid red;
+      float: right;
+
+      .searchbar {
+        width: 100%;
+        border: none;
+        background: none;
+        color: rgb(31, 135, 196);
+        font-size: 17px;
+        margin-top: 10px;
+        text-indent: 12px;
+
+
+      }
+
+      .searchicon {
+        height: 20px;
+        float: right;
+        margin-top: -21px;
+        margin-right: 10px;
+
+      }
+
+    }
+  }
+
+
+}
+
+
+// rate card
+.ratecard {
+  width: 96%;
+  margin: 0 auto;
+  height: 120px;
+  // border: 1px solid red;
+  margin-top: 10px;
+
+  .left {
+    width: 47%;
+    height: 100%;
+    background-color: $overlay;
+    border-radius: 10px;
+    // border: 1px solid gray;
+    float: left;
+
+    .itemname {
+      font-size: 25px;
+      text-align: center;
+      margin: 10px;
+      color: white;
+
+    }
+
+    .date {
+      font-size: 14px;
+      color: $blue;
+      text-align: center;
+      margin-top: 10px;
+
+    }
+
+    .province {
+      width: 80%;
+      height: 16px;
+      border: 1px solid gray;
+      color: rgb(255, 136, 0);
+      border-radius: 4px;
+      margin: 0 auto;
+      margin-top: 10px;
+      text-align: center;
+      font-size: 12px;
+      padding: 2px;
+    }
+
+  }
+
+  .right {
+    width: 47%;
+    height: 100%;
+    background-color: $overlay;
+    border-radius: 10px;
+    // border: 1px solid gray;
+    float: right;
+
+    .currency {
+      width: 80%;
+      height: 16px;
+      border: 1px solid gray;
+      color: rgb(255, 136, 0);
+      border-radius: 4px;
+      margin: 0 auto;
+      margin-top: 10px;
+      text-align: center;
+      font-size: 12px;
+      padding: 2px;
+    }
+
+    .universalrate {
+      font-size: 22px;
+      color: $green;
+      width: 80%;
+      margin: 0 auto;
+      margin-top: 10px;
+      text-align: center;
+      padding-bottom: 5px;
+      border-bottom: 1px solid gray;
+
+      span {
+        margin-right: 8px;
+
+        .icon {
+          height: 18px;
+        }
+      }
+    }
+
+    .local {
+      font-size: 22px;
+      color: $green;
+      width: 80%;
+      margin: 0 auto;
+      margin-top: 5px;
+      text-align: center;
+      // padding-bottom: 10px;
+      // border-bottom: 1px solid gray;
+
+      span {
+        margin-right: 8px;
+
+        .icon {
+          height: 18px;
+        }
+      }
+    }
+  }
+
+}

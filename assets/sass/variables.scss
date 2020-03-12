@@ -1,0 +1,26 @@
+$mobile: 850px;
+$mheight: 90vh;
+
+
+
+
+$overlay: rgba(0, 0, 0, 0.466);
+$font: Montserrat;
+$accent: gray;
+
+$green: rgb(7, 204, 57);
+$red: rgb(255, 51, 51);
+$mintgreen: rgb(47, 230, 93);
+$blue : rgb(31, 135, 196);
+
+@mixin mobile {
+    @media (max-width: #{$mobile}) {
+        @content;
+    }
+}
+
+@mixin mheight {
+    @media (min-height: #{$mheight}) {
+        @content;
+    }
+}

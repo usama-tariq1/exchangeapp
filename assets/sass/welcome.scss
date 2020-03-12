@@ -1,0 +1,191 @@
+@import 'variables';
+
+
+
+.screen {
+    height: 100vh;
+    width: 100%;
+    background-color: $overlay;
+    // border: 1px solid red;
+
+    &__header {
+        height: 50px;
+        width: 100%;
+        // border: 1px solid red;
+        // padding: 10px;
+
+        &__left {
+            float: left;
+            height: 100%;
+            // width: 60%;
+            // border: 1px solid red;
+
+            .icon {
+                height: 80%;
+                margin: 10px;
+
+            }
+
+        }
+
+        &__right {
+            float: right;
+            height: 100%;
+            // width: 30%;
+            // border: 1px solid red;
+
+            .btn {
+                height: 30px;
+                width: 90px;
+                background-color: rgb(250, 51, 51);
+                color: white;
+                font-size: 14px;
+                margin: 10px 10px;
+                border-radius: 30px;
+                text-align: center;
+                padding-top: 6px;
+                font-family: Montserrat;
+
+                // float: left;
+                &:hover {
+                    background-color: gray;
+                }
+            }
+        }
+    }
+
+    &__body {
+        // height: 500px;
+        width: 70%;
+        margin: 0 auto;
+
+        // border: 1px solid red;
+        // margin-top: 40px;
+        font-family: Montserrat;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+
+        .imgholder {
+            height: 120px;
+            width: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto;
+            margin-top: 40px;
+            // border: 1px solid red;
+
+            .img {
+                width: 100%;
+            }
+        }
+
+        .title {
+            font-size: 22px;
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+
+        }
+
+        .subtitle {
+            font-size: 15px;
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+
+        }
+
+        .btnholder {
+            height: 26px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            // border: 1px solid red;
+
+            .startbtn {
+                height: 200%;
+
+                &:hover {
+                    filter: grayscale(100%);
+                }
+            }
+
+            .btn {
+                height: 100%;
+                width: 90px;
+                background-color: rgb(29, 163, 29);
+                color: white;
+                font-size: 14px;
+                margin: 0px 10px;
+                border-radius: 30px;
+                text-align: center;
+                padding-top: 4px;
+
+                // float: left;
+                &:hover {
+                    background-color: gray;
+                }
+            }
+        }
+
+
+
+    }
+
+    &__footer {
+        height: 50px;
+        width: 100%;
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        // border: 1px solid red;
+
+
+        .left {
+            float: left;
+            height: 100%;
+            width: 45%;
+            // border: 1px solid red;
+
+            .icon {
+                height: 80%;
+                margin: 10px;
+
+            }
+
+        }
+
+        .right {
+            float: right;
+            height: 100%;
+            width: 45%;
+            // border: 1px solid red;
+
+            .btn {
+                float: right;
+                height: 30px;
+                width: 90px;
+                background-color: $green;
+                color: white;
+                font-size: 14px;
+                margin: 10px 10px;
+                border-radius: 30px;
+                text-align: center;
+                padding-top: 6px;
+                font-family: Montserrat;
+
+                // float: left;
+                &:hover {
+                    background-color: gray;
+                }
+            }
+        }
+
+    }
+
+}
