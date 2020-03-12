@@ -68,6 +68,27 @@ class Post extends Database
         //     echo 500;
         // }
     }
+    public function update($contract_id, $u_id, $date, $post_type, $rateupdate_id, $city_id, $item_id)
+    {
+        $db = Database::link();
+        $r = $db->update(
+            $this->table_name,
+            [
+                'u_id' => $u_id,
+                'date' => $date,
+                'post_type' => $post_type,
+                'city_id' => $city_id,
+                'item_id' => $item_id
+
+            ],
+            [
+                'contract_id' => $contract_id,
+                'rateupdate_id' => $rateupdate_id
+            ]
+        );
+        return $r->rowCount();
+    }
+
     public function delete($id)
     {
         $db = Database::link();

@@ -36,6 +36,7 @@ Route::set('/user/authorize', 'UserController@authorizeuser');
 
 //postController
 Route::set('/posts/types', 'PostController@types');
+// Route::set('/posts/types', 'PostController@update');
 Route::res('/posts', 'PostController');
 
 // RatesheetController

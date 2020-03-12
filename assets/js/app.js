@@ -546,6 +546,44 @@ function addcontract() {
     }
 }
 
+
+
+function updatecontract() {
+
+    var err = validatecontractform('#addcontractform');
+    if (err === 0) {
+
+        // $("#btn").style.display = "none";
+
+        $("#btnholder").html(preloader);
+        var data = new FormData($("#addcontractform")[0]);
+        $.ajax({
+            data: data,
+            type: "post",
+            url: "/contract/update",
+            contentType: false,
+            processData: false,
+
+            success: function (data) {
+                if (data > 0) {
+
+                    setTimeout(() => {
+                        $("#box").after("<div id='msg'> Contract Updated </div>");
+                        // $('#addcontractform')[0].reset();
+                        $('#btnholder').html("<div class='btn' id='btn' onclick='updatecontract()'>Save</div>");
+                    }, 1000);
+                } else {
+                    console.log(data)
+                }
+                // console.log(data);
+            }
+        });
+    }
+}
+
+
+
+
 function addrateupdate() {
 
     // $("#btn").style.display = "none";
@@ -577,6 +615,40 @@ function addrateupdate() {
     });
 
 }
+
+function editrateupdate() {
+
+    // $("#btn").style.display = "none";
+
+    $("#btnholder").html(preloader);
+    var data = new FormData($("#addrateupdateform")[0]);
+    $.ajax({
+        data: data,
+        type: "post",
+        url: "/rateupdate/update",
+        contentType: false,
+        processData: false,
+
+        success: function (data) {
+            if (data > 0) {
+
+                setTimeout(() => {
+                    $("#box").after("<div id='msg'> Rate updated ! </div>");
+                    // $('#addrateupdateform')[0].reset();
+                    $('#btnholder').html("<div class='btn' id='btn' onclick='editrateupdate()'>Save</div>");
+                }, 1000);
+            } else {
+                $("#box").after("<div id='errmsg'> Unable to update! </div>");
+                // $('#addrateupdateform')[0].reset();
+                $('#btnholder').html("<div class='btn' id='btn' onclick='editrateupdate()'>Save</div>");
+            }
+            // console.log(data);
+        }
+    });
+
+}
+
+
 
 function removeItem(id) {
     console.log(id);
@@ -615,6 +687,21 @@ function removeItem(id) {
 
         }
     });
+
+
+}
+
+
+function postupdatepage(id, type) {
+    console.log(id);
+    console.log(type);
+
+    $("#menu" + id).html(preloader);
+
+    var url = "/" + type + "/update?id=" + id + "";
+    loadpage(url);
+
+
 
 
 }

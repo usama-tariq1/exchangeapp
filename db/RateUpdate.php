@@ -9,8 +9,8 @@ class RateUpdate extends Database
     protected $table_name = 'rateupdates';
     protected $join = [
         "[>]items" => ["item_id" => "item_id"],
-        "[>]cities" => ["rateupdates.city_id" => "city_id"],
-        "[>]users" => ["rateupdates.u_id" => "u_id"]
+        "[>]cities" => ["rateupdates.city_id" => "city_id"]
+
 
     ];
 
@@ -37,6 +37,30 @@ class RateUpdate extends Database
             'downrate' => $downrate
         ]);
         return $db->id();
+        // if ($r) {
+        //     echo 200;
+        // } else {
+        //     echo 500;
+        // }
+    }
+    public function update($rateupdate_id, $date, $u_id, $item_id, $city_id, $uprate, $downrate)
+    {
+        $db = Database::link();
+        $r = $db->update(
+            $this->table_name,
+            [
+                'item_id' => $item_id,
+                'u_id' => $u_id,
+                'city_id' => $city_id,
+                'date' => $date,
+                'uprate' => $uprate,
+                'downrate' => $downrate
+            ],
+            [
+                'rateupdate_id' => $rateupdate_id
+            ]
+        );
+        return $r->rowCount();
         // if ($r) {
         //     echo 200;
         // } else {

@@ -33,10 +33,10 @@
                 <div class="date">{$post['date']}</div>
             </div>
             <!-- <img src="icons/3dot.png" class="dots"> -->
-
+            {var $cid=$post['contract_id']}
             <div class="menu" id="menu{$post_id}">
                 <img src="/assets/icons/delete-icon.png" class="menu__icon" onclick="removeItem({$post_id})" title="Delete">
-                <img src="/assets/icons/edit-icon.png" class="menu__icon" title="Edit">
+                <img src="/assets/icons/edit-icon.png" class="menu__icon" onclick="postupdatepage({$cid} ,{$posttype} )" title="Edit">
 
             </div>
         </div>
@@ -78,10 +78,10 @@
                 <div class="date">{$post['date']}</div>
             </div>
             <!-- <img src="icons/3dot.png" class="dots"> -->
-
+            {var $ruid=$post['rateupdate_id']}
             <div class="menu">
                 <img src="/assets/icons/delete-icon.png" class="menu__icon" onclick="removeItem({$post_id})" title="Delete">
-                <img src="/assets/icons/edit-icon.png" class="menu__icon" title="Edit">
+                <img src="/assets/icons/edit-icon.png" class="menu__icon" onclick="postupdatepage({$ruid} ,{$posttype} )" title="Edit">
 
             </div>
         </div>
