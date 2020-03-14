@@ -17,6 +17,15 @@ class ApiRateUpdateController
         $type = 'currency';
         include_once('./db/ApiRate.php');
         $apirate = new ApiRate();
-        $apirate->update($date, $city_id, $item_id, $uprate, $downrate, $identifier);
+        $sum = 0;
+
+        $date = date('')
+        
+        foreach($currencies as $currency){
+            $r = $apirate->update($date, $city_id, $item_id, $uprate, $downrate, $identifier);
+            $sum = $sum + $r->rowCount(); 
+        }
+
+
     }
 }
