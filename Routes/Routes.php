@@ -67,6 +67,10 @@ Route::res('/rateupdate', 'RateUpdateController');
 Route::res('/item', 'ItemController');
 
 
+// ApiRateUpdateController
+Route::set('/api/update/currency', 'ApiRateUpdateController@currency');
+Route::set('/api/update/commodity', 'ApiRateUpdateController@commodity');
+
 
 
 
