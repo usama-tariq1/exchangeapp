@@ -16,6 +16,22 @@ $(document).ready(function () {
     // loaddock();
 });
 
+function searchthis(st) {
+    var value = st.toLowerCase();
+    $("#myTable #tr").filter(function () {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+}
+// $(document).ready(function () {
+//     $("#myInput").on("keyup", function () {
+//         var value = $(this).val().toLowerCase();
+//         $("#myTable #tr").filter(function () {
+//             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+//         });
+//     });
+// });
+
+
 // PullToRefresh.init({
 //     mainElement: '#contentbox',
 //     onRefresh: function () {

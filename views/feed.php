@@ -3,7 +3,7 @@
     <div class="topbar">
         <div class="left"> <img src="/assets/icons/reload-icon.png" onclick="appstart()" class="icon"> </div>
         <div class="right">
-            <input type="text" placeholder="Search" name="search" class="searchbar">
+            <input type="text" placeholder="Search" onkeyup="searchthis(this.value)" id="myInput" name="search" class="searchbar">
             <img src="/assets/icons/search-icon-gray.png" for="search" class="searchicon">
         </div>
     </div>
@@ -30,86 +30,86 @@
         </div>
     </div>
     -->
-
-    {foreach $posts as $post}
-    {var $posttype = $post['post_type']}
-    {var $uid = $post['u_id']}
-    {if $posttype == 'contract' }
-    <div class="c-card">
-        <div class="c-head" onclick="loadpage('/user?id='+{$uid})">
-            <div class="imgholder"><img src="/assets/images/{$post['u_profile']}" class="img"></div>
-            <div class="info">
-                <div class="name">{$post['u_name']}</div>
-                <div class="date">{$post['date']}</div>
-            </div>
-            <!-- <img src="icons/3dot.png" class="dots"> -->
-
-        </div>
-        <div class="clearfix"></div>
-
-        <div class="body">
-            <div class="rate-update">
-                <div class="title">
-                    <div class="rate-of"> {$post['item_name']} </div>
-                    <div class="city">{$post['city_name']}</div>
-                </div>
-                <div class="clearfix"></div>
-
-            </div>
-            <div class="contract">
-                <div class="company">
-                    <div class="bar"></div>
-                    <div class="company-name">{$post['firm1']} </div>
-                    <div class="company-name">{$post['firm2']} </div>
-                </div>
-                <div class="clearfix"></div>
-
-                <div class="rate">Rate : <span>{$post['price']}<span> /{$post['unit']}</span> </span></div>
-                <div class="qty">Qty : <span>{$post['qty']} <span> {$post['unit']}</span> </span></div>
-            </div>
-        </div>
-
-        <div class="clearfix"></div>
-    </div><!-- c-card ends here -->
-
-    {elseif $posttype == 'rateupdate' }
-    <div class="c-card">
-        <div class="c-head" onclick="loadpage('/user?id='+{$uid})">
-            <div class="imgholder"><img src="/assets/images/{$post['u_profile']}" class="img"></div>
-            <div class="info">
-                <div class="name">{$post['u_name']}</div>
-                <div class="date">{$post['date']}</div>
-            </div>
-            <!-- <img src="icons/3dot.png" class="dots"> -->
-
-        </div>
-        <div class="clearfix"></div>
-
-        <div class="body">
-            <div class="rate-update">
-                <div class="title">
-                    <div class="rate-of"> {$post['item_name']} </div>
-                    <div class="city">{$post['city_name']}</div>
-                </div>
-
+    <div class="contain" id="myTable">
+        {foreach $posts as $post}
+        {var $posttype = $post['post_type']}
+        {var $uid = $post['u_id']}
+        {if $posttype == 'contract' }
+        <div class="c-card" id="tr">
+            <div class="c-head" onclick="loadpage('/user?id='+{$uid})">
+                <div class="imgholder"><img src="/assets/images/{$post['u_profile']}" class="img"></div>
                 <div class="info">
-                    <div class="up-rate"> <span><i class="fa fa-chevron-up" aria-hidden="true"></i></span> {$post['uprate']}</div>
-                    <div class="down-rate"> <span><i class="fa fa-chevron-down" aria-hidden="true"></i></span> {$post['downrate']} </div>
+                    <div class="name">{$post['u_name']}</div>
+                    <div class="date">{$post['date']}</div>
                 </div>
-
-                <div class="clearfix"></div>
+                <!-- <img src="icons/3dot.png" class="dots"> -->
 
             </div>
-        </div>
+            <div class="clearfix"></div>
 
-        <div class="clearfix"></div>
-    </div><!-- c-card ends here -->
-    {/if}
-    {/foreach}
+            <div class="body">
+                <div class="rate-update">
+                    <div class="title">
+                        <div class="rate-of"> {$post['item_name']} </div>
+                        <div class="city">{$post['city_name']}</div>
+                    </div>
+                    <div class="clearfix"></div>
+
+                </div>
+                <div class="contract">
+                    <div class="company">
+                        <div class="bar"></div>
+                        <div class="company-name">{$post['firm1']} </div>
+                        <div class="company-name">{$post['firm2']} </div>
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <div class="rate">Rate : <span>{$post['price']}<span> /{$post['unit']}</span> </span></div>
+                    <div class="qty">Qty : <span>{$post['qty']} <span> {$post['unit']}</span> </span></div>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+        </div><!-- c-card ends here -->
+
+        {elseif $posttype == 'rateupdate' }
+        <div class="c-card" id="tr">
+            <div class="c-head" onclick="loadpage('/user?id='+{$uid})">
+                <div class="imgholder"><img src="/assets/images/{$post['u_profile']}" class="img"></div>
+                <div class="info">
+                    <div class="name">{$post['u_name']}</div>
+                    <div class="date">{$post['date']}</div>
+                </div>
+                <!-- <img src="icons/3dot.png" class="dots"> -->
+
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="body">
+                <div class="rate-update">
+                    <div class="title">
+                        <div class="rate-of"> {$post['item_name']} </div>
+                        <div class="city">{$post['city_name']}</div>
+                    </div>
+
+                    <div class="info">
+                        <div class="up-rate"> <span><i class="fa fa-chevron-up" aria-hidden="true"></i></span> {$post['uprate']}</div>
+                        <div class="down-rate"> <span><i class="fa fa-chevron-down" aria-hidden="true"></i></span> {$post['downrate']} </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+        </div><!-- c-card ends here -->
+        {/if}
+        {/foreach}
 
 
-    <div class="scrollspace" id="scrollspace"></div>
-
+        <div class="scrollspace" id="scrollspace"></div>
+    </div>
 
 
 
