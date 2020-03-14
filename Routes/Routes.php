@@ -41,6 +41,8 @@ Route::res('/posts', 'PostController');
 
 // RatesheetController
 Route::set('/ratesheet', 'RatesheetController');
+Route::set('/ratesheet/currency', 'RatesheetController@currency');
+Route::set('/ratesheet/commodity', 'RatesheetController@commodity');
 
 
 // module

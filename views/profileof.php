@@ -1,48 +1,39 @@
+{var $ud=$data['ud']}
 {var $posts=$data['posts']}
-<div class="feeds" id="feeds">
-    <div class="topbar">
-        <div class="left"> <img src="/assets/icons/reload-icon.png" onclick="appstart()" class="icon"> </div>
-        <div class="right">
-            <input type="text" placeholder="Search" name="search" class="searchbar">
-            <img src="/assets/icons/search-icon-gray.png" for="search" class="searchicon">
+<div class="profile">
+
+    <div class="profilehold">
+        <!-- <img src="icons/3dot.png" class="dots"> -->
+        <div class="pimg">
+            <img src="/assets/images/{$ud['u_profile']}" class="img">
+
+        </div>
+        <div class="bio">
+            <div class="name">{$ud['u_name']} </div>
+            <div class="contact"> <i style="color:red" class="fa fa-phone" aria-hidden="true"></i> {$ud['u_cell']}</div>
+            <div class="city"> <i style="color:red" class="fa fa-map-marker" aria-hidden="true"></i> {$ud['city_name']},{$ud['city_state']} </div>
+
+            <!-- <div class="editmenu">
+
+</div> -->
         </div>
     </div>
-
-
-
 
     <div class="nullvoid" id="nullvoid"></div>
-
-
-
-
-    <!--
-    <div class="ratecard">
-        <div class="left">
-            <div class="itemname">Cotton</div>
-            <div class="date">25 feb 2020</div>
-            <div class="province">Punjab</div>
-        </div>
-        <div class="right">
-            <div class="currency">Rupees</div>
-            <div class="universalrate"> <span><img src="/assets/icons/uperrow-icon.png" class="icon"></span> 3000</div>
-            <div class="local"> <span><img src="/assets/icons/uperrow-icon.png" class="icon"></span> 3500</div>
-        </div>
-    </div>
-    -->
-
     {foreach $posts as $post}
     {var $posttype = $post['post_type']}
-    {var $uid = $post['u_id']}
+    {var $post_id= $post['post_id']}
     {if $posttype == 'contract' }
-    <div class="c-card">
-        <div class="c-head" onclick="loadpage('/user?id='+{$uid})">
+
+    <div class="c-card" id="{$post_id}">
+        <div class="c-head">
             <div class="imgholder"><img src="/assets/images/{$post['u_profile']}" class="img"></div>
             <div class="info">
                 <div class="name">{$post['u_name']}</div>
                 <div class="date">{$post['date']}</div>
             </div>
             <!-- <img src="icons/3dot.png" class="dots"> -->
+            {var $cid=$post['contract_id']}
 
         </div>
         <div class="clearfix"></div>
@@ -73,14 +64,17 @@
     </div><!-- c-card ends here -->
 
     {elseif $posttype == 'rateupdate' }
-    <div class="c-card">
-        <div class="c-head" onclick="loadpage('/user?id='+{$uid})">
+
+
+    <div class="c-card" id="{$post_id}">
+        <div class="c-head">
             <div class="imgholder"><img src="/assets/images/{$post['u_profile']}" class="img"></div>
             <div class="info">
                 <div class="name">{$post['u_name']}</div>
                 <div class="date">{$post['date']}</div>
             </div>
             <!-- <img src="icons/3dot.png" class="dots"> -->
+            {var $ruid=$post['rateupdate_id']}
 
         </div>
         <div class="clearfix"></div>
@@ -112,8 +106,6 @@
 
 
 
-
-
-
-
 </div>
+<?php //include 'dock.php'; 
+?>

@@ -10,22 +10,42 @@ use Unirest\Request;
 
 class ApiRateUpdateController
 {
+    public function index()
+    {
+    }
     public function currency()
     {
 
-        $currencies = ['USD', 'EUR', 'GBP', 'AUD', 'INR', 'SAR', 'CNY', 'AED'];
+        $ids = ['USD', 'EUR', 'GBP', 'AUD', 'INR', 'SAR', 'CNY', 'AED'];
         $type = 'currency';
         include_once('./db/ApiRate.php');
         $apirate = new ApiRate();
         $sum = 0;
+        $date = date("F j, Y");
+        $city_id = 0;
 
-        $date = date('')
-        
-        foreach($currencies as $currency){
-            $r = $apirate->update($date, $city_id, $item_id, $uprate, $downrate, $identifier);
-            $sum = $sum + $r->rowCount(); 
+        $ratedata = file_get_contents('https://prime.exchangerate-api.com/v5/f1f6fff5e19ea7cde6ccd24a/latest/PKR', false);
+
+        // $ratedata = file_get_contents('http://exchange.local/api' ,  );
+
+        $ratedata = json_decode($ratedata);
+        if ($ratedata->result = 'success') {
+            $rate = $ratedata->conversion_rates;
         }
 
+        foreach ($ids as $id) {
+            // $rateof = $rate[$id];
+            $uprate = 1 /  $rate->$id;
+            $downrate = $uprate - (1 % $uprate);
+            $r = $apirate->update($date, $uprate, $downrate, $id);
+            $sum = $sum + $r;
+            if ($sum > 0) {
+                echo "<div id='msg' >Api Rates Updated !</div>";
+            } else {
+                echo "<div id='errmsg' >Unable to Upate !</div>";
+            }
+        }
 
+        // echo $ratedata->result;
     }
 }

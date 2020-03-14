@@ -705,3 +705,22 @@ function postupdatepage(id, type) {
 
 
 }
+
+
+
+function ratesof(type) {
+    var url;
+    if (type == 0) {
+        url = "/ratesheet";
+
+    }
+    if (type == 1) {
+        url = "/ratesheet/currency";
+    }
+    if (type == 2) {
+        url = "/ratesheet/commodity";
+    }
+    $('#contentbox').html(preloader).load(url);
+    // console.log(url);
+    // console.log(type);
+}

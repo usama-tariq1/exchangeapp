@@ -11,6 +11,30 @@ class UserController
 
     public function index()
     {
+        include_once './db/User.php';
+        $user = new User();
+
+        if (isset($_GET['id'])) {
+            $uid = $_GET['id'];
+
+
+            $ud = $user->find(
+                [
+                    'u_id' => $uid
+                ]
+            )[0];
+
+            include_once './db/Post.php';
+            $post = new Post();
+            $posts = $post->find([
+                'posts.u_id' => $uid,
+                "ORDER" => ["posts.post_id" => "DESC"]
+            ]);
+
+            // $jd = json_encode($ud);
+            // echo $jd;
+            Controller::View('profileof', compact('ud', 'posts'));
+        }
     }
 
     public function create()
