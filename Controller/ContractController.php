@@ -49,10 +49,11 @@ class ContractController
         $unit = $_POST['unit'];
         $price = $_POST['price'];
         $qty = $_POST['qty'];
+        $qty_unit = $_POST['qty_unit'];
 
         include_once('./db/Contract.php');
         $contract = new Contract();
-        $response = $contract->create($item_id, $u_id, $city_id, $date, $country_name, $firm1, $firm2, $unit, $price, $qty);
+        $response = $contract->create($item_id, $u_id, $city_id, $date, $country_name, $firm1, $firm2, $unit, $price, $qty, $qty_unit);
         if ($response > 0) {
             // include_once('./db/Contract.php');
             // $contract = new Contract();

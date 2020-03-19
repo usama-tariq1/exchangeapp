@@ -562,4 +562,175 @@ body {
 .ratecard .right .local span .icon {
   height: 18px;
 }
+
+.c-cardedit {
+  width: 95%;
+  margin: 0 auto;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.836)), to(rgba(0, 0, 0, 0.61)));
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.836), rgba(0, 0, 0, 0.61));
+  height: auto;
+  padding: 7px;
+  border-radius: 16px;
+  margin-top: 10px;
+}
+
+.c-cardedit .body {
+  height: auto;
+  padding-left: 16%;
+  padding-bottom: 20px;
+}
+
+.c-cardedit .body .simplebar-scrollbar:before {
+  background-color: gray;
+}
+
+.c-cardedit .body .simplebar-scrollbar {
+  margin-right: -3px;
+  position: absolute;
+}
+
+.c-cardedit .body .rate-update {
+  width: 80%;
+  font-style: Montserrat;
+  margin-bottom: 10px;
+}
+
+.c-cardedit .body .rate-update .title {
+  width: 40%;
+  margin-top: 30px;
+  float: left;
+}
+
+.c-cardedit .body .rate-update .title .rate-of {
+  font-size: 22px;
+  color: #07cc39;
+}
+
+.c-cardedit .body .rate-update .title .rate-of .txt {
+  color: white;
+  font-size: 22px;
+  border: none;
+  background: none;
+}
+
+.c-cardedit .body .rate-update .title .rate-of .txt option {
+  color: black;
+}
+
+.c-cardedit .body .rate-update .title .city {
+  font-size: 12px;
+  color: #26cae7;
+}
+
+.c-cardedit .body .rate-update .title .city .txt {
+  font-size: 12px;
+  color: #26cae7;
+  border: none;
+  background: none;
+}
+
+.c-cardedit .body .rate-update .title .city .txt option {
+  color: black;
+}
+
+.c-cardedit .body .rate-update .info {
+  width: 50%;
+  float: left;
+  margin-top: 20px;
+  padding-left: 20px;
+}
+
+.c-cardedit .body .rate-update .info .up-rate {
+  font-size: 20px;
+  color: #07cc39;
+  border-bottom: 1px solid gray;
+  text-align: center;
+}
+
+.c-cardedit .body .rate-update .info .down-rate {
+  font-size: 20px;
+  color: #ff3333;
+  text-align: center;
+}
+
+.c-cardedit .body .contract {
+  width: 80%;
+}
+
+.c-cardedit .body .contract .company {
+  height: auto;
+  width: auto;
+}
+
+.c-cardedit .body .contract .company .bar {
+  height: 100px;
+  width: 5px;
+  background-color: orange;
+  float: left;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.c-cardedit .body .contract .company .company-name {
+  font-family: Montserrat;
+  font-size: 17px;
+  color: #07cc39;
+  margin-top: 10px;
+}
+
+.c-cardedit .body .contract .company .company-name .txt {
+  font-size: 17px;
+  color: #07cc39;
+  border: none;
+  background: none;
+  width: 90%;
+}
+
+.c-cardedit .body .contract .company .company-name .txt option {
+  color: black;
+}
+
+.c-cardedit .body .contract .rate,
+.c-cardedit .body .contract .qty {
+  color: lightgray;
+  font-size: 12px;
+  margin-top: 7px;
+}
+
+.c-cardedit .body .contract .rate span,
+.c-cardedit .body .contract .qty span {
+  color: orange;
+}
+
+.c-cardedit .body .contract .rate span .txt,
+.c-cardedit .body .contract .qty span .txt {
+  color: orange;
+  border: none;
+  background: none;
+  font-size: 12px;
+  width: 70px;
+}
+
+.c-cardedit .body .contract .rate span .txt option,
+.c-cardedit .body .contract .qty span .txt option {
+  color: black;
+}
+
+.c-cardedit .body .contract .rate span span,
+.c-cardedit .body .contract .qty span span {
+  color: #10a010;
+}
+
+.c-cardedit .body .contract .rate span span .txt,
+.c-cardedit .body .contract .qty span span .txt {
+  color: #10a010;
+  border: none;
+  background: none;
+  font-size: 12px;
+}
+
+.c-cardedit .body .contract .rate span span .txt option,
+.c-cardedit .body .contract .qty span span .txt option {
+  color: black;
+}
 /*# sourceMappingURL=style.css.map */

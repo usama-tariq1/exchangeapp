@@ -60,7 +60,7 @@
                 <div class="clearfix"></div>
 
                 <div class="rate">Rate : <span>{$post['price']}<span> /{$post['unit']}</span> </span></div>
-                <div class="qty">Qty : <span>{$post['qty']} <span> {$post['unit']}</span> </span></div>
+                <div class="qty">Qty : <span>{$post['qty']} <span> {$post['qty_unit']}</span> </span></div>
             </div>
         </div>
 

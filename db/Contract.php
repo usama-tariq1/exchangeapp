@@ -45,7 +45,7 @@ class Contract extends Database
     }
 
 
-    public function create($item_id, $u_id, $city_id, $date, $country_name, $firm1, $firm2, $unit, $price, $qty)
+    public function create($item_id, $u_id, $city_id, $date, $country_name, $firm1, $firm2, $unit, $price, $qty, $qty_unit)
     {
         $db = Database::link();
         $r = $db->insert($this->table_name, [
@@ -58,7 +58,8 @@ class Contract extends Database
             'firm2' => $firm2,
             'unit' => $unit,
             'price' => $price,
-            'qty' => $qty
+            'qty' => $qty,
+            'qty_unit' => $qty_unit
         ]);
         return $db->id();
         // if ($r) {

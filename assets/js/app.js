@@ -1,7 +1,7 @@
 var fullScreen = false;
 var dock = false;
 var preloader =
-    "<img src='assets/icons/loader3.gif' style='height:50px; display:block; margin:0 auto;'  >";
+    "<img src='/assets/icons/loader3.gif' style='height:50px; display:block; margin:0 auto;'  >";
 
 $(document).ready(function () {
     $.ajaxSetup({
@@ -14,7 +14,22 @@ $(document).ready(function () {
     appstart();
     // loadpage("/start");
     // loaddock();
+
+    $(window).on('popstate', function () {
+        loadpage(window.location.pathname);
+    });
+
+    // $(window).bind('beforeunload', function (event) {
+    //     // alert("reload");
+    //     window.history.pushState("object or string", "Home", "/");
+    //     window.location = window.location.href;
+    //     // return false;
+    // });
+
+
 });
+
+
 
 function searchthis(st) {
     var value = st.toLowerCase();
@@ -51,6 +66,9 @@ function loadfeed() {
         loaddock();
     }, 1000);
 
+    // window.location.replace(content);
+    window.history.pushState("object or string", "Home", content);
+
     // counter();
 }
 
@@ -61,6 +79,9 @@ function loadprofile() {
     $("#contentbox")
         .html(preloader)
         .load(content);
+
+    window.history.pushState("object or string", "Home", content);
+
 
 
 
@@ -85,6 +106,9 @@ function loadpage(page) {
     $("#contentbox")
         .html(gifloader)
         .load(content);
+
+    window.history.pushState("object or string", "Home", content);
+
 }
 
 function counter() {
@@ -390,7 +414,10 @@ function authorizeuser() {
 }
 
 function appstart() {
-    $('#contentbox').html(preloader).load('/start');
+    var url = '/start';
+    $('#contentbox').html(preloader).load(url);
+    // window.location.replace(url);
+    window.history.pushState("object or string", "Welcome", url);
 
 }
 
@@ -737,6 +764,7 @@ function ratesof(type) {
         url = "/ratesheet/commodity";
     }
     $('#contentbox').html(preloader).load(url);
+    window.history.pushState("object or string", "Ratesheet", url);
     // console.log(url);
     // console.log(type);
 }

@@ -29,6 +29,7 @@ class Post extends Database
         'contracts.price',
         'contracts.unit',
         'contracts.qty',
+        'contracts.qty_unit',
         'contracts.firm1',
         'contracts.firm2',
         'rateupdates.rateupdate_id',

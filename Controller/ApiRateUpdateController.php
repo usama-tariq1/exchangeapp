@@ -36,7 +36,7 @@ class ApiRateUpdateController
         foreach ($ids as $id) {
             // $rateof = $rate[$id];
             $uprate = 1 /  $rate->$id;
-            $downrate = $uprate - (1 % $uprate);
+            $downrate = $uprate - ($uprate * (1 / 100));
             $r = $apirate->update($date, $uprate, $downrate, $id);
             $sum = $sum + $r;
             if ($sum > 0) {

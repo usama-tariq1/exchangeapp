@@ -18,9 +18,7 @@
                     {/foreach}
                 </select>
 
-                <select name="country_name" id="country_name" class="txt">
-                    <option value="+92"> Pakistan </option>
-                </select>
+                <input type="hidden" name="country_name" value="pakistan">
 
                 <select name="city_id" id="city_id" class="txt">
                     {foreach $cities as $city}
@@ -29,37 +27,37 @@
 
                 </select>
 
-                <select name="firm1" id="firm1" class="txt">
-                    <option value="0">Select First Firm </option>
-                    {foreach $firms as $firm}
-                    <option value="{$firm['firm_name']}"> {$firm['firm_name']} </option>
-                    {/foreach}
+                <input type="text" id="firm1" name="firm1" placeholder="Seller" class="txt">
+
+
+
+                <textarea name="firm2" id="firm2" placeholder="Buyer..." class="txt" cols="1" rows="3"></textarea>
+
+                <div class="txt" style="height:auto; text-indent:0px; ">
+
+
+                    <input checked="checked" type="radio" name="unit" value="(37.324 KG)" id="unit">
+                    <label for="unit">(37.324 KG)</label></br>
+                    <input type="radio" name="unit" value="(40 KG)" id="unit">
+                    <label for="unit">(40 KG)</label>
+
+                </div>
+
+
+                <input type="number" placeholder="Rate" id="price" required name="price" class="txt">
+
+                <input type="number" placeholder="Quantity" id="qty" required name="qty" class="txt" style="width:40%;float:left; margin-left:20px; ">
+                <!--                 <input type="text" placeholder="Item" name="qty_unit" class="txt" style="width:30%;float:right; margin-right:20px; "> -->
+
+                <select name="qty_unit" id="" class="txt" style="width:30%;float:right; margin-right:20px; ">
+                    <option value=" ">Item</option>
+                    <option value="Bale">Bale</option>
+                    <option value="Bora">Bora</option>
+                    <option value="Truck">Truck</option>
 
                 </select>
 
-                <select name="firm2" id="firm2" class="txt">
-                    <option value="0">Select Second Firm </option>
-                    {foreach $firms as $firm}
-                    <option value="{$firm['firm_name']}"> {$firm['firm_name']} </option>
-                    {/foreach}
-
-                </select>
-
-
-
-                <select name="unit" id="unit" class="txt">
-
-                    <option value="Bale">Bale </option>
-                    <option value="Kg">Kg </option>
-                    <option value="Grams">Grams </option>
-
-
-
-                </select>
-
-                <input type="number" placeholder="Price per Unit" id="price" required name="price" class="txt">
-
-                <input type="number" placeholder="Quantity" id="qty" required name="qty" class="txt">
+                <div class="clearfix"> </div>
 
 
             </div>

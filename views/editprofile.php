@@ -15,13 +15,13 @@
     <div class="sscreen__body">
         <div class="clearfix"></div>
         <div class="imgholder" id="imgholder">
-            <img src="assets/images/{$ud['u_profile']}" class="img">
+            <img src="/assets/images/{$ud['u_profile']}" class="img">
         </div>
 
         <form action="#" id="uploadprofile" method="POST" enctype="multipart/form-data">
 
             <div class="editbtn">
-                <img src="assets/icons/edit-icon.png" class="icon">
+                <img src="/assets/icons/edit-icon.png" class="icon">
                 <input type="file" id="profile-img" name="profile-img" accept="image/*" onchange="uploadprofile()">
 
             </div>
@@ -54,7 +54,7 @@
 
             <div class="btnholder" id="btnholder">
                 <div id="holder"></div>
-                <img onclick="updateuser()" src="assets/icons/save-icon.png" id="btn" class="startbtn">
+                <img onclick="updateuser()" src="/assets/icons/save-icon.png" id="btn" class="startbtn">
 
             </div>
         </form>
