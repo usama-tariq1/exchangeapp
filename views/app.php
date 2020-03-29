@@ -35,8 +35,18 @@
     <link rel="stylesheet" href="/assets/css/functionpage.css">
     <link rel="manifest" href="/assets/js/manifest.json">
     <script src="/assets/js/app.js"> </script>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"> </script>
+
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    <script>
+        var OneSignal = window.OneSignal || [];
+        OneSignal.push(function() {
+            OneSignal.init({
+                appId: "ddf03022-548f-4db5-bcb5-ea4d79964f45",
+            });
+        });
+    </script>
 
 
 </head>

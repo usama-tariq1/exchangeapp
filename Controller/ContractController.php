@@ -68,7 +68,14 @@ class ContractController
             $city_id = $city_id;
             include_once('./db/Post.php');
             $post = new Post();
-            echo $post->create($contract_id, $u_id, $date, $post_type, $rateupdate_id, $city_id, $item_id);
+            $confirm = $post->create($contract_id, $u_id, $date, $post_type, $rateupdate_id, $city_id, $item_id);
+            $title = $_SESSION['u_name'] . ' Added A New Contract';
+            $msg = 'New Contract of ' . $firm1;
+            if ($confirm > 0) {
+                include_once('./db/Notification.php');
+                $notif = Notifyusers($title, $msg);
+            }
+            echo $confirm;
         }
     }
 
@@ -108,9 +115,10 @@ class ContractController
             $unit = $_POST['unit'];
             $price = $_POST['price'];
             $qty = $_POST['qty'];
+            $qty_unit = $_POST['qty_unit'];
 
 
-            $response = $contract->update($contract_id, $item_id, $u_id, $city_id, $date, $country_name, $firm1, $firm2, $unit, $price, $qty);
+            $response = $contract->update($contract_id, $item_id, $u_id, $city_id, $date, $country_name, $firm1, $firm2, $unit, $price, $qty, $qty_unit);
             echo $response;
             if ($response > 0) {
 
@@ -123,7 +131,14 @@ class ContractController
                 $city_id = $city_id;
                 include_once('./db/Post.php');
                 $post = new Post();
-                echo $post->update($contract_id, $u_id, $date, $post_type, $rateupdate_id, $city_id, $item_id);
+                $confirm = $post->update($contract_id, $u_id, $date, $post_type, $rateupdate_id, $city_id, $item_id);
+                $title = $_SESSION['u_name'] . ' Update A Contract';
+                $msg = '';
+                if ($confirm > 0) {
+                    include_once('./db/Notification.php');
+                    $notif = notifyusers($title, $msg);
+                }
+                echo $confirm;
             }
         } else {
             echo "<div id='errmsg'>Denied!</div>";

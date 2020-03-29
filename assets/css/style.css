@@ -733,4 +733,54 @@ body {
 .c-cardedit .body .contract .qty span span .txt option {
   color: black;
 }
+
+.searchedas {
+  width: 95%;
+  border-radius: 7px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.searchedas .row {
+  width: 75%;
+  margin: 0 auto;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.616);
+  padding-top: 10px;
+  border-radius: 20px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.searchedas .row .imgholder {
+  float: left;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: 1px solid gray;
+  overflow: hidden;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.searchedas .row .imgholder .img {
+  width: 100%;
+}
+
+.searchedas .row .userinfo {
+  width: auto;
+  height: auto;
+  margin-left: 10px;
+}
+
+.searchedas .row .userinfo .name {
+  color: white;
+  font-size: 16px;
+}
+
+.searchedas .row .userinfo .city {
+  color: #1f87c4;
+  font-size: 12px;
+}
 /*# sourceMappingURL=style.css.map */

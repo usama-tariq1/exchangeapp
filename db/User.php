@@ -19,33 +19,55 @@ class User extends Database
     //     $db = Database::link();
     // }
 
+    public function like($u_name)
+    {
+        $db = Database::link();
+        $r = $db->select(
+            $this->table_name,
+            $this->join,
+            [
+                'u_name',
+                'u_id',
+                'u_profile',
+                'cities.city_name',
+                'cities.city_state'
+            ],
+            [
+                'u_name[~]' => $u_name
+            ]
+        );
+        // echo json_encode($r);
+        return $r;
+    }
+
     public function createuser($name, $cell, $city_id, $password, $profile)
     {
         $db = Database::link();
         $r = $db->insert($this->table_name, [
-            
+
             'u_name' => $name,
             'u_cell' => $cell,
             'city_id' => $city_id,
             'u_password' => $password,
             'u_profile' => $profile
-            
+
         ]);
-        
+
         echo $db->id();
-        
-        
+
+
         // if ($r) {
         //     echo 200;
         // } else {
         //     echo 500;
         // }
     }
-    public function profileup($profile){
+    public function profileup($profile)
+    {
         $db = Database::link();
         $r = $db->insert($this->table_name, [
             'u_profile' => $profile
-            
+
         ]);
         echo $db->id();
     }
@@ -59,21 +81,23 @@ class User extends Database
                 'u_cell' => $cell,
                 'city_id' => $city_id,
                 'u_password' => $password
-                
+
             ],
             [
                 'u_id' => $u_id
             ]
         );
-        $s = $db->update($this->table_name, [
-            'u_profile' => $profile
-            
-        ],
+        $s = $db->update(
+            $this->table_name,
+            [
+                'u_profile' => $profile
+
+            ],
             [
                 'u_id' => $u_id
             ]
         );
-        return $s->rowCount()+$r->rowCount();
+        return $s->rowCount() + $r->rowCount();
         // return $profile;
     }
     public function find($where)

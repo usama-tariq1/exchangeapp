@@ -39,11 +39,15 @@ class ApiRateUpdateController
             $downrate = $uprate - ($uprate * (1 / 100));
             $r = $apirate->update($date, $uprate, $downrate, $id);
             $sum = $sum + $r;
-            if ($sum > 0) {
-                echo "<div id='msg' >Api Rates Updated !</div>";
-            } else {
-                echo "<div id='errmsg' >Unable to Upate !</div>";
-            }
+        }
+        if ($sum > 0) {
+            echo "<div id='msg' >Api Rates Updated !</div>";
+            $title = 'Update In Process ';
+            $msg = 'Currency Rate are Updated! Date:  ' . $date;
+            include_once('./db/Notification.php');
+            $notif = Notifyusers($title, $msg);
+        } else {
+            echo "<div id='errmsg' >Unable to Upate !</div>";
         }
 
         // echo $ratedata->result;

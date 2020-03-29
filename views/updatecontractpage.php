@@ -15,8 +15,10 @@
         <form action="" id="addcontractform" method="post">
 
 
+            <input type="hidden" name="contract_id" value="{$post['contract_id']}">
+            <input type="hidden" name="country_name" value="{$post['country_name']}">
 
-            <div class="c-cardedit" id="{$post_id}">
+            <div class="c-cardedit" id="box">
 
                 <div class="clearfix"></div>
 
@@ -61,7 +63,7 @@
                             <label for=""> Seller</label>
                             <div class="company-name"><input type="text" name="firm1" class="txt" value="{$post['firm1']}"> </div>
                             <label for=""> Buyer</label>
-                            <div class="company-name"><input type="text" name="firm2" class="txt" value="{$post['firm2']}"> </div>
+                            <div class="company-name"><textarea name="firm2" class="txt" rows="2" cols="10">{$post['firm2']}</textarea> </div>
 
                         </div>
                         <div class="clearfix"></div>
@@ -73,8 +75,8 @@
                                     <select name="unit" id="unit" class="txt">
 
 
-                                        <option value="(40KG)"> 40 KG </option>
-                                        <option value="(37.324)">37.324 Kg </option>
+                                        <option value="(40 KG)"> 40 KG </option>
+                                        <option value="(37.324 KG)">37.324 Kg </option>
 
                                         <option selected value="{$post['unit']}">{$post['unit']} </option>
 

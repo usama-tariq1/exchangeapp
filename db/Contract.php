@@ -68,7 +68,7 @@ class Contract extends Database
         //     echo 500;
         // }
     }
-    public function update($contract_id, $item_id, $u_id, $city_id, $date, $country_name, $firm1, $firm2, $unit, $price, $qty)
+    public function update($contract_id, $item_id, $u_id, $city_id, $date, $country_name, $firm1, $firm2, $unit, $price, $qty, $qty_unit)
     {
         $db = Database::link();
         $r = $db->update(
@@ -83,7 +83,8 @@ class Contract extends Database
                 'firm2' => $firm2,
                 'unit' => $unit,
                 'price' => $price,
-                'qty' => $qty
+                'qty' => $qty,
+                'qty_unit' => $qty_unit
             ],
             [
                 'contract_id' => $contract_id

@@ -36,7 +36,25 @@ function searchthis(st) {
     $("#myTable #tr").filter(function () {
         $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
+
+    var data = '';
+
+    $.ajax({
+        data: data,
+        type: "post",
+        url: "search/user?u_name=" + value + "",
+        contentType: false,
+        processData: false,
+
+        success: function (data) {
+            $('#searchedas').html(data);
+            // console.log(data);
+        }
+    });
+
 }
+
+
 // $(document).ready(function () {
 //     $("#myInput").on("keyup", function () {
 //         var value = $(this).val().toLowerCase();

@@ -73,7 +73,12 @@ Route::res('/item', 'ItemController');
 Route::set('/api/update/currency', 'ApiRateUpdateController@currency');
 Route::set('/api/update/commodity', 'ApiRateUpdateController@commodity');
 
+// TestController
+Route::set('/test/notification', 'TestController@testnotify');
 
+
+// SearchController
+Route::set('/search/user', 'SearchController@feedsearch');
 
 
 

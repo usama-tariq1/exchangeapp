@@ -54,7 +54,9 @@
             <div class="contract">
                 <div class="company">
                     <div class="bar"></div>
+                    <label for="">Seller</label>
                     <div class="company-name">{$post['firm1']} </div>
+                    <label for=""> Buyer</label>
                     <div class="company-name">{$post['firm2']} </div>
                 </div>
                 <div class="clearfix"></div>

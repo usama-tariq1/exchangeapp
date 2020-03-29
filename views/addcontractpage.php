@@ -11,56 +11,82 @@
 
     <div class="updatepage">
         <form action="" id="addcontractform" method="post">
-            <div class="box" id="box">
-                <select name="item_id" id="item_id" class="txt">
-                    {foreach $items as $item}
-                    <option value="{$item['item_id']}"> {$item['item_name']} </option>
-                    {/foreach}
-                </select>
-
-                <input type="hidden" name="country_name" value="pakistan">
-
-                <select name="city_id" id="city_id" class="txt">
-                    {foreach $cities as $city}
-                    <option value="{$city['city_id']}"> {$city['city_name']} </option>
-                    {/foreach}
-
-                </select>
-
-                <input type="text" id="firm1" name="firm1" placeholder="Seller" class="txt">
 
 
+            <input type="hidden" name="country_name" value=" ">
 
-                <textarea name="firm2" id="firm2" placeholder="Buyer..." class="txt" cols="1" rows="3"></textarea>
+            <div class="c-cardedit" id="box">
 
-                <div class="txt" style="height:auto; text-indent:0px; ">
+                <div class="clearfix"></div>
+
+                <div class="body">
+                    <div class="rate-update">
+                        <div class="title">
+                            <div class="rate-of">
+                                <select name="item_id" id="item_id" class="txt">
+                                    {foreach $items as $item}
+                                    <option value="{$item['item_id']}"> {$item['item_name']} </option>
+                                    {/foreach}
+                                </select>
+                            </div>
+                            <div class="city">
+                                <select name="city_id" id="city_id" class="txt">
+                                    {foreach $cities as $city }
+                                    <option value="{$city['city_id']}"> {$city['city_name']} </option>
+                                    {/foreach}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+
+                    </div>
+                    <div class="contract">
+                        <div class="company">
+                            <div class="bar"></div>
+                            <label for=""> Seller</label>
+                            <div class="company-name"><input type="text" placeholder="Seller" name="firm1" class="txt"> </div>
+                            <label for=""> Buyer</label>
+                            <div class="company-name"><textarea name="firm2" placeholder="Buyers..." class="txt" rows="2" cols="10"></textarea> </div>
+
+                        </div>
+                        <div class="clearfix"></div>
+
+                        <div class="rate">Rate : <span>
+                                <input type="number" placeholder="Rate" id="price" required name="price" class="txt">
+
+                                <span>
+                                    <select name="unit" id="unit" class="txt">
 
 
-                    <input checked="checked" type="radio" name="unit" value="(37.324 KG)" id="unit">
-                    <label for="unit">(37.324 KG)</label></br>
-                    <input type="radio" name="unit" value="(40 KG)" id="unit">
-                    <label for="unit">(40 KG)</label>
+                                        <option value="(40 KG)"> 40 KG </option>
+                                        <option value="(37.324 KG)">37.324 Kg </option>
 
+
+
+
+
+                                    </select>
+                                </span> </span>
+                        </div>
+                        <div class="qty">Qty : <span>
+                                <input type="number" placeholder="Quantity" id="qty" required name="qty" class="txt">
+                                <span>
+                                    <select name="qty_unit" id="" class="txt">
+                                        <option value=" ">Item</option>
+                                        <option value="Bales">Bales</option>
+                                        <option value="Bag">Bag</option>
+
+
+
+                                    </select>
+                                </span> </span>
+                        </div>
+                    </div>
                 </div>
 
+                <div class="clearfix"></div>
+            </div><!-- c-card ends here -->
 
-                <input type="number" placeholder="Rate" id="price" required name="price" class="txt">
-
-                <input type="number" placeholder="Quantity" id="qty" required name="qty" class="txt" style="width:40%;float:left; margin-left:20px; ">
-                <!--                 <input type="text" placeholder="Item" name="qty_unit" class="txt" style="width:30%;float:right; margin-right:20px; "> -->
-
-                <select name="qty_unit" id="" class="txt" style="width:30%;float:right; margin-right:20px; ">
-                    <option value=" ">Item</option>
-                    <option value="Bale">Bale</option>
-                    <option value="Bora">Bora</option>
-                    <option value="Truck">Truck</option>
-
-                </select>
-
-                <div class="clearfix"> </div>
-
-
-            </div>
         </form>
 
         <div class="btnholder" id="btnholder">
